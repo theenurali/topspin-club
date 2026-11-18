@@ -92,15 +92,6 @@ function renderCompare(el) {
       ${row.values.map((v) => `<td>${cell(v)}</td>`).join('')}</tr>`).join('')}</tbody>`;
 }
 
-function renderSoon(el) {
-  el.innerHTML = COMING_SOON.map((s) => `
-    <article class="soon">
-      <p class="soon__tag">Скоро</p>
-      <h3>${esc(s.title)}</h3>
-      <p>${esc(s.text)}</p>
-    </article>`).join('');
-}
-
 function renderFaq(el) {
   el.innerHTML = FAQ.map((f) => `
     <details class="faq">

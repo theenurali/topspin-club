@@ -96,7 +96,7 @@ body::before {
 .brand { display: inline-flex; align-items: center; gap: 8px; color: var(--text); font-weight: 700; font-size: 19px; letter-spacing: -0.03em; }
 .brand:hover { text-decoration: none; }
 .brand__ball { width: 16px; height: 16px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff3e6, var(--ball) 50%, #d45500); }
-.gnav__links { display: flex; gap: 28px; margin-left: auto; }
+.gnav__links { display: flex; gap: 24px; margin-left: auto; }
 .gnav__links a { color: rgba(29, 29, 31, .8); font-size: 13px; letter-spacing: -0.01em; transition: color .2s; }
 .gnav__links a:hover, .gnav__links a.is-active { color: var(--text); text-decoration: none; }
 .gnav__links a.is-active { font-weight: 600; }
@@ -105,7 +105,7 @@ body::before {
 .gnav__toggle span:first-child { top: 18px; }
 .gnav__toggle span:last-child { top: 25px; }
 
-@media (max-width: 833px) {
+@media (max-width: 899px) {
   .gnav__cta { margin-left: auto; }
   .gnav__toggle { display: block; }
   .gnav__links {
@@ -132,10 +132,8 @@ body::before {
 .hero__status { margin-top: 22px; min-height: 28px; }
 .hero__visual { max-width: 980px; margin: 8px auto 0; padding: 0 var(--gutter); }
 .hero__svg { width: 100%; height: auto; display: block; }
-.hero__ball { animation: float 2.4s var(--ease) infinite alternate; transform-origin: center; transform-box: fill-box; }
-.hero__ball-shadow { animation: shadow 2.4s var(--ease) infinite alternate; transform-origin: center; transform-box: fill-box; }
-@keyframes float { from { transform: translateY(0); } to { transform: translateY(44px); } }
-@keyframes shadow { from { transform: scale(.7); opacity: .5; } to { transform: scale(1.1); opacity: 1; } }
+/* Мяч и тень двигает js/hero-rally.js; ракетки делают замах при ударе */
+.paddle { transform-box: fill-box; transform-origin: 50% 80%; }
 
 /* Status dots */
 .dot { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 500; color: var(--muted); }
@@ -330,14 +328,6 @@ body::before {
 .compare .yes { color: var(--blue); font-weight: 700; font-size: 17px; }
 .compare .no { color: #aeaeb2; }
 
-/* ===== Soon ===== */
-.soon-grid { display: grid; gap: 16px; margin-top: 40px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-@media (max-width: 734px) { .soon-grid { grid-template-columns: minmax(0, 1fr); } }
-.soon { padding: 32px 28px; border-radius: var(--radius); background: var(--card); display: flex; flex-direction: column; gap: 10px; }
-.soon__tag { align-self: flex-start; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 980px; background: var(--amber-bg); color: var(--amber); }
-.soon h3 { font-size: 24px; font-weight: 700; letter-spacing: -0.03em; }
-.soon p:last-child { color: var(--muted); }
-
 /* ===== FAQ ===== */
 .faq-list { margin-top: 32px; border-top: 1px solid var(--line); }
 .faq { border-bottom: 1px solid var(--line); }
@@ -366,6 +356,5 @@ body::before {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero__ball, .hero__ball-shadow { animation: none; }
   *, *::before, *::after { transition-duration: .01ms !important; }
 }

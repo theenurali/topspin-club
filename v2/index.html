@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>TopSpin · Бронирование столов</title>
+  <title>TopSpin · Настольный теннис</title>
   <meta name="description" content="Клуб настольного тенниса TopSpin: онлайн-бронирование столов, абонементы с тренерами. Бета 2.">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23ff7a1a'/%3E%3C/svg%3E">
@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/sections.css">
 </head>
 <body>
 
@@ -19,9 +20,11 @@
       <a href="#top" class="brand" aria-label="TopSpin, наверх"><span class="brand__ball" aria-hidden="true"></span>TopSpin</a>
       <nav class="gnav__links" id="gnav-links" aria-label="Разделы">
         <a href="#tables">Столы</a>
-        <a href="#booking">Бронирование</a>
+        <a href="#booking">Бронь</a>
         <a href="#plans">Абонементы</a>
-        <a href="#faq">Вопросы</a>
+        <a href="#coaches">Тренеры</a>
+        <a href="#tournaments">Турниры</a>
+        <a href="#rating">Рейтинг</a>
         <a href="#contacts">Контакты</a>
       </nav>
       <a class="pill pill--sm gnav__cta" href="#booking">Забронировать</a>
@@ -74,16 +77,20 @@
           <rect x="122" y="210" width="756" height="6" rx="2" fill="#fff"/>
           <rect x="114" y="206" width="10" height="50" rx="3" fill="#2c2c2e"/>
           <rect x="876" y="206" width="10" height="50" rx="3" fill="#2c2c2e"/>
+          <ellipse class="hero__ball-shadow" cx="560" cy="300" rx="16" ry="5" fill="rgba(0,0,0,.35)"/>
           <g transform="translate(700 318) rotate(-28)">
-            <rect x="-9" y="38" width="18" height="58" rx="7" fill="#b5835a"/>
-            <ellipse cx="0" cy="0" rx="58" ry="52" fill="#e0262f"/>
-            <ellipse cx="0" cy="0" rx="58" ry="52" fill="none" stroke="#8f121a" stroke-width="5"/>
+            <g class="paddle" data-paddle="near">
+              <rect x="-9" y="38" width="18" height="58" rx="7" fill="#b5835a"/>
+              <ellipse cx="0" cy="0" rx="58" ry="52" fill="#e0262f"/>
+              <ellipse cx="0" cy="0" rx="58" ry="52" fill="none" stroke="#8f121a" stroke-width="5"/>
+            </g>
           </g>
           <g transform="translate(330 150) rotate(150) scale(.62)">
-            <rect x="-9" y="38" width="18" height="58" rx="7" fill="#b5835a"/>
-            <ellipse cx="0" cy="0" rx="58" ry="52" fill="#1c1c1e"/>
+            <g class="paddle" data-paddle="far">
+              <rect x="-9" y="38" width="18" height="58" rx="7" fill="#b5835a"/>
+              <ellipse cx="0" cy="0" rx="58" ry="52" fill="#1c1c1e"/>
+            </g>
           </g>
-          <ellipse class="hero__ball-shadow" cx="560" cy="300" rx="16" ry="5" fill="rgba(0,0,0,.25)"/>
           <circle class="hero__ball" cx="560" cy="170" r="17" fill="url(#ballG)"/>
         </svg>
       </div>
@@ -206,12 +213,57 @@
       </div>
     </section>
 
-    <!-- SOON -->
-    <section class="section section--gray" id="soon">
+    <!-- COACHES -->
+    <section class="section section--gray" id="coaches">
       <div class="wrap">
-        <h2 class="sec-title">Скоро.</h2>
-        <p class="sec-sub">Над этим уже работаем для следующей версии.</p>
-        <div class="soon-grid" data-render="soon"></div>
+        <h2 class="sec-title">Тренеры.</h2>
+        <p class="sec-sub">Выберите тренера и запишитесь в группу или на индивидуальную тренировку.</p>
+        <div class="coaches" data-coaches="cards"></div>
+
+        <div class="sched">
+          <div class="sched__head">
+            <h3 class="sched__title">Расписание</h3>
+            <div class="seg" role="radiogroup" aria-label="Тип занятия" data-coaches="kind"></div>
+          </div>
+          <div class="chips" role="group" aria-label="Тренер" data-coaches="filter"></div>
+          <div class="days" role="radiogroup" aria-label="День" data-coaches="days"></div>
+          <div class="sched__list" data-coaches="list" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOURNAMENTS -->
+    <section class="section" id="tournaments">
+      <div class="wrap">
+        <h2 class="sec-title">Турниры.</h2>
+        <p class="sec-sub">Для всех уровней. Регистрация в WhatsApp, места в сетке ограничены.</p>
+        <div class="t-next" data-render="t-next"></div>
+        <div class="t-layout">
+          <div class="t-list" data-render="t-list"></div>
+          <div class="winners" data-render="winners"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RATING -->
+    <section class="section section--gray" id="rating">
+      <div class="wrap">
+        <h2 class="sec-title">Рейтинг.</h2>
+        <p class="sec-sub">Рейтинг игроков клуба. Обновляется после каждого турнира.</p>
+        <div class="rating-controls">
+          <div class="seg" role="radiogroup" aria-label="Категория" data-rating="gender"></div>
+          <label class="search" for="rating-search">
+            <span class="sr-only">Найти игрока</span>
+            <input id="rating-search" type="search" placeholder="Найти игрока" autocomplete="off" maxlength="40" data-rating="search">
+          </label>
+        </div>
+        <div class="podium" data-rating="podium"></div>
+        <div class="rating-wrap">
+          <table class="rating">
+            <thead><tr><th>#</th><th>Игрок</th><th>Очки</th><th>Изм.</th><th class="hide-sm">Побед</th></tr></thead>
+            <tbody data-rating="body"></tbody>
+          </table>
+        </div>
       </div>
     </section>
 
@@ -245,10 +297,16 @@
   </footer>
 
   <script src="js/data.js" defer></script>
+  <script src="js/data-coaching.js" defer></script>
+  <script src="js/data-tournaments.js" defer></script>
   <script src="js/utils.js" defer></script>
   <script src="js/availability.js" defer></script>
   <script src="js/booking.js" defer></script>
   <script src="js/sections.js" defer></script>
+  <script src="js/coaches.js" defer></script>
+  <script src="js/tournaments.js" defer></script>
+  <script src="js/hero-rally.js" defer></script>
+  <script src="js/reveal.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

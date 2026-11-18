@@ -93,9 +93,14 @@ function init() {
   }));
   safely('plans', () => createPlans($('#plans')));
   safely('compare', () => renderCompare($('[data-render="compare"]')));
-  safely('soon', () => renderSoon($('[data-render="soon"]')));
+  safely('coaches', () => createCoachSchedule($('#coaches')));
+  safely('tournaments', () => renderTournaments($('[data-render="t-next"]'), $('[data-render="t-list"]'), $('[data-render="winners"]')));
+  safely('rating', () => createRating($('#rating')));
   safely('faq', () => renderFaq($('[data-render="faq"]')));
   safely('nav', highlightNav);
+  // анимации запускаем последними, когда все блоки уже на странице
+  safely('rally', setupHeroRally);
+  safely('reveal', setupReveal);
 }
 
 init();
