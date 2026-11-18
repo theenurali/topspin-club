@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>TopSpin · Бронирование столов</title>
+  <meta name="description" content="Клуб настольного тенниса TopSpin: онлайн-бронирование столов, абонементы с тренерами. Бета 2.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23ff7a1a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="gnav">
+    <div class="gnav__inner">
+      <a href="#top" class="brand" aria-label="TopSpin, наверх"><span class="brand__ball" aria-hidden="true"></span>TopSpin</a>
+      <nav class="gnav__links" id="gnav-links" aria-label="Разделы">
+        <a href="#tables">Столы</a>
+        <a href="#booking">Бронирование</a>
+        <a href="#plans">Абонементы</a>
+        <a href="#faq">Вопросы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a class="pill pill--sm gnav__cta" href="#booking">Забронировать</a>
+      <button type="button" class="gnav__toggle" aria-expanded="false" aria-controls="gnav-links" aria-label="Меню">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap hero__inner">
+        <p class="hero__new">Бета 2</p>
+        <h1 class="hero__title">TopSpin.</h1>
+        <p class="hero__sub">Настольный теннис рядом.<br>Стол бронируется за&nbsp;минуту.</p>
+        <div class="hero__cta">
+          <a class="pill" href="#booking">Забронировать стол</a>
+          <a class="link-chev" href="#plans">Абонементы</a>
+        </div>
+        <p class="hero__status" data-hero-status></p>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <svg viewBox="0 0 1000 540" class="hero__svg">
+          <defs>
+            <linearGradient id="tableTop" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#3a7be0"/>
+              <stop offset="1" stop-color="#1b4aa6"/>
+            </linearGradient>
+            <radialGradient id="ballG" cx=".35" cy=".3" r=".75">
+              <stop offset="0" stop-color="#fff3e6"/>
+              <stop offset=".45" stop-color="#ff8a2a"/>
+              <stop offset="1" stop-color="#d45500"/>
+            </radialGradient>
+            <filter id="soft" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+            <pattern id="mesh" width="8" height="8" patternUnits="userSpaceOnUse">
+              <path d="M0 0H8M0 0V8" stroke="rgba(255,255,255,.55)" stroke-width="1" fill="none"/>
+            </pattern>
+          </defs>
+          <ellipse cx="500" cy="505" rx="460" ry="22" fill="rgba(0,0,0,.16)" filter="url(#soft)"/>
+          <rect x="128" y="398" width="16" height="104" rx="4" fill="#3a3a3c"/>
+          <rect x="856" y="398" width="16" height="104" rx="4" fill="#3a3a3c"/>
+          <rect x="262" y="300" width="12" height="150" rx="4" fill="#48484a"/>
+          <rect x="726" y="300" width="12" height="150" rx="4" fill="#48484a"/>
+          <polygon points="40,380 960,380 960,402 40,402" fill="#163c88"/>
+          <polygon points="230,120 770,120 960,380 40,380" fill="url(#tableTop)"/>
+          <polygon points="230,120 770,120 960,380 40,380" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/>
+          <line x1="500" y1="120" x2="500" y2="380" stroke="#fff" stroke-width="3" opacity=".9"/>
+          <rect x="122" y="214" width="756" height="36" fill="url(#mesh)"/>
+          <rect x="122" y="210" width="756" height="6" rx="2" fill="#fff"/>
+          <rect x="114" y="206" width="10" height="50" rx="3" fill="#2c2c2e"/>
+          <rect x="876" y="206" width="10" height="50" rx="3" fill="#2c2c2e"/>
+          <g transform="translate(700 318) rotate(-28)">
+            <rect x="-9" y="38" width="18" height="58" rx="7" fill="#b5835a"/>
+            <ellipse cx="0" cy="0" rx="58" ry="52" fill="#e0262f"/>
+            <ellipse cx="0" cy="0" rx="58" ry="52" fill="none" stroke="#8f121a" stroke-width="5"/>
+          </g>
+          <g transform="translate(330 150) rotate(150) scale(.62)">
+            <rect x="-9" y="38" width="18" height="58" rx="7" fill="#b5835a"/>
+            <ellipse cx="0" cy="0" rx="58" ry="52" fill="#1c1c1e"/>
+          </g>
+          <ellipse class="hero__ball-shadow" cx="560" cy="300" rx="16" ry="5" fill="rgba(0,0,0,.25)"/>
+          <circle class="hero__ball" cx="560" cy="170" r="17" fill="url(#ballG)"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="section section--gray" aria-labelledby="hl-title">
+      <div class="wrap">
+        <h2 class="sec-title" id="hl-title">Всё для игры.<br><span class="muted">Ничего лишнего.</span></h2>
+        <div class="bento">
+          <div class="tile tile--wide tile--dark">
+            <p class="tile__kicker">Столы</p>
+            <p class="tile__big">3 стола ITTF</p>
+            <p class="tile__text">Турнирный, тренировочный с роботом и стол у бара для компании.</p>
+          </div>
+          <div class="tile">
+            <p class="tile__kicker">Цена</p>
+            <p class="tile__big">от <span data-text="priceFrom">2 500 ₸</span></p>
+            <p class="tile__text">за час. Цена за стол, а не за игрока.</p>
+          </div>
+          <div class="tile">
+            <p class="tile__kicker">Инвентарь</p>
+            <p class="tile__big">Бесплатно</p>
+            <p class="tile__text">Ракетки и мячи выдаём на ресепшене.</p>
+          </div>
+          <div class="tile tile--wide tile--accent">
+            <p class="tile__kicker">Часы работы</p>
+            <p class="tile__big">10:00–23:00</p>
+            <p class="tile__text">Каждый день, включая выходные. Бар и раздевалка с душем.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLES -->
+    <section class="section" id="tables">
+      <div class="wrap">
+        <h2 class="sec-title">Выберите стол.</h2>
+        <p class="sec-sub">Статус обновляется по текущему времени.</p>
+        <div class="tcards" data-render="tables"></div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="section section--gray" id="booking">
+      <div class="wrap">
+        <h2 class="sec-title">Бронирование.</h2>
+        <p class="sec-sub">Четыре шага, и стол ваш. Предоплата не нужна.</p>
+
+        <div class="bk">
+          <div class="bk__steps">
+            <div class="bk-step">
+              <h3 class="bk-step__title"><span class="num">1</span>Стол</h3>
+              <div class="opts" role="radiogroup" aria-label="Стол" data-bk="tables"></div>
+            </div>
+            <div class="bk-step">
+              <h3 class="bk-step__title"><span class="num">2</span>День</h3>
+              <div class="days" role="radiogroup" aria-label="День" data-bk="days"></div>
+            </div>
+            <div class="bk-step">
+              <h3 class="bk-step__title"><span class="num">3</span>Длительность</h3>
+              <div class="seg" role="radiogroup" aria-label="Длительность" data-bk="durations"></div>
+            </div>
+            <div class="bk-step">
+              <h3 class="bk-step__title"><span class="num">4</span>Время начала</h3>
+              <p class="bk-hint" data-bk="hint" aria-live="polite"></p>
+              <div class="times" data-bk="times"></div>
+            </div>
+          </div>
+
+          <aside class="bk-sum" data-bk="summary" aria-live="polite">
+            <h3 class="bk-sum__title">Ваша бронь</h3>
+            <dl class="bk-sum__rows" data-bk="rows"></dl>
+            <div class="bk-sum__total"><span>Итого</span><strong data-bk="total">—</strong></div>
+
+            <form class="bk-form" data-bk="form" novalidate>
+              <label class="field" for="bk-name">
+                <span class="field__label">Имя</span>
+                <input class="field__input" id="bk-name" name="name" autocomplete="given-name" maxlength="40" required>
+              </label>
+              <p class="field__err" data-err="name"></p>
+              <label class="field" for="bk-phone">
+                <span class="field__label">Телефон</span>
+                <input class="field__input" id="bk-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 700 000 00 00" maxlength="18" required>
+              </label>
+              <p class="field__err" data-err="phone"></p>
+              <button class="pill pill--block" type="submit">Забронировать</button>
+              <p class="fine">Отмена бесплатно, если предупредить за 3 часа.</p>
+            </form>
+
+            <div class="bk-done" data-bk="done" hidden>
+              <div class="bk-done__check" aria-hidden="true">✓</div>
+              <p class="bk-done__title">Заявка готова</p>
+              <p class="fine">Отправьте её администратору в WhatsApp. Подтвердим бронь в течение 10 минут.</p>
+              <a class="pill pill--block pill--green" data-bk="wa" href="#booking" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+              <button type="button" class="link-btn" data-bk="edit">Изменить бронь</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div class="bk-bar" data-bk="bar">
+        <div class="bk-bar__text" data-bk="bar-text"></div>
+        <button type="button" class="pill pill--sm" data-bk="bar-go">Далее</button>
+      </div>
+    </section>
+
+    <!-- PLANS -->
+    <section class="section" id="plans">
+      <div class="wrap">
+        <h2 class="sec-title">Абонементы.</h2>
+        <p class="sec-sub">Тренировки с тренером в группе или один на один.</p>
+        <div class="seg seg--center" role="radiogroup" aria-label="Срок оплаты" data-plans="billing"></div>
+        <div class="plans" data-plans="cards"></div>
+
+        <h3 class="compare-title">Сравните абонементы</h3>
+        <div class="compare-wrap">
+          <table class="compare" data-render="compare"></table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOON -->
+    <section class="section section--gray" id="soon">
+      <div class="wrap">
+        <h2 class="sec-title">Скоро.</h2>
+        <p class="sec-sub">Над этим уже работаем для следующей версии.</p>
+        <div class="soon-grid" data-render="soon"></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="wrap wrap--narrow">
+        <h2 class="sec-title">Вопросы и ответы.</h2>
+        <div class="faq-list" data-render="faq"></div>
+      </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section class="section section--gray" id="contacts">
+      <div class="wrap">
+        <h2 class="sec-title">Приходите играть.</h2>
+        <div class="contacts">
+          <div class="contact"><p class="contact__k">Адрес</p><p class="contact__v" data-text="address">Шымкент, ул. Примерная, 1</p><a class="link-chev" data-link="map" href="#">Открыть на карте</a></div>
+          <div class="contact"><p class="contact__k">Часы работы</p><p class="contact__v" data-text="hours">Ежедневно, 10:00–23:00</p></div>
+          <div class="contact"><p class="contact__k">Телефон и WhatsApp</p><p class="contact__v" data-text="phone">+7 (700) 000-00-00</p><a class="link-chev" data-link="whatsapp" href="#">Написать</a></div>
+          <div class="contact"><p class="contact__k">Instagram</p><p class="contact__v" data-text="instagram">@topspin_club</p><a class="link-chev" data-link="instagram" href="#">Открыть</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>Бета-версия 2. Данные на сайте приведены для примера.</p>
+      <p>© <span data-text="year">2026</span> TopSpin. <a href="../">Первая бета-версия</a></p>
+    </div>
+  </footer>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/availability.js" defer></script>
+  <script src="js/booking.js" defer></script>
+  <script src="js/sections.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
