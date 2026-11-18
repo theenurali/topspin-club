@@ -48,8 +48,20 @@ function renderStatus(el) {
     : `<i></i>Открыто · свободно ${free} из ${TABLES.length} ${pluralize(TABLES.length, 'стола', 'столов', 'столов')}`;
 }
 
+// Прокручивает только полоску меню по горизонтали, чтобы активная кнопка
+// была по центру. scrollIntoView здесь нельзя: он двигает и саму страницу
+// и обрывает переход по якорю и прокрутку пользователя.
+function centerNavLink(nav, link) {
+  if (nav.scrollWidth <= nav.clientWidth) return;
+  const navRect = nav.getBoundingClientRect();
+  const linkRect = link.getBoundingClientRect();
+  const delta = linkRect.left - navRect.left - (nav.clientWidth - linkRect.width) / 2;
+  if (Math.abs(delta) > 1) nav.scrollBy({ left: delta, behavior: 'smooth' });
+}
+
 function highlightNav() {
-  const links = [...document.querySelectorAll('.nav__links a')];
+  const nav = document.querySelector('.nav__links');
+  const links = [...nav.querySelectorAll('a')];
   // .hero без ссылки в меню: когда он в кадре, подсветка снимается
   const sections = [document.querySelector('.hero'), ...links
     .map((a) => document.querySelector(a.getAttribute('href')))]
@@ -62,7 +74,7 @@ function highlightNav() {
       links.forEach((a) => {
         const active = a.getAttribute('href') === id;
         a.classList.toggle('is-active', active);
-        if (active) a.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+        if (active) centerNavLink(nav, a);
       });
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
