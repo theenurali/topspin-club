@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TopSpin · Настольный теннис</title>
+  <meta name="description" content="Клуб настольного тенниса: 3 стола, бар, аренда стола онлайн, абонементы и группы с тренерами, турниры и зал чемпионов.">
+  <meta name="theme-color" content="#0a1120">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23ff7a1a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a href="#top" class="logo" aria-label="На главную">
+        <span class="logo__ball" aria-hidden="true"></span>
+        <span data-text="name">TopSpin</span>
+        <span class="beta">beta</span>
+      </a>
+      <nav class="nav__links" aria-label="Разделы">
+        <a href="#club">Клуб</a>
+        <a href="#bar">Бар</a>
+        <a href="#rent">Аренда</a>
+        <a href="#subscription">Абонемент</a>
+        <a href="#tournaments">Турниры</a>
+        <a href="#champions">Чемпионы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a class="btn btn--small nav__cta" href="#rent">Забронировать</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero__inner">
+        <div class="hero__text">
+          <p class="status" data-status><i></i>Проверяем столы…</p>
+          <h1>Настольный теннис, <span class="accent">в который хочется возвращаться</span></h1>
+          <p class="hero__lead"><span data-text="tagline">Клуб настольного тенниса</span>: три стола, бар, тренеры и турниры каждый месяц. Приходите поиграть с друзьями, учиться с нуля или биться за кубок.</p>
+          <div class="hero__actions">
+            <a class="btn" href="#rent">Забронировать стол</a>
+            <a class="btn btn--ghost" href="#subscription">Тренировки и группы</a>
+          </div>
+          <ul class="hero__facts">
+            <li><strong data-text="tables">3</strong><span>стола ITTF</span></li>
+            <li><strong data-text="trainers">4</strong><span>тренера</span></li>
+            <li><strong>1×</strong><span>турнир в месяц</span></li>
+          </ul>
+        </div>
+
+        <div class="court" aria-hidden="true">
+          <svg class="court__table" viewBox="0 0 400 300">
+            <defs>
+              <linearGradient id="tableTop" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#2a63c9"/>
+                <stop offset="1" stop-color="#1a428f"/>
+              </linearGradient>
+            </defs>
+            <polygon points="90,40 310,40 390,260 10,260" fill="url(#tableTop)"/>
+            <polygon points="90,40 310,40 390,260 10,260" fill="none" stroke="#fff" stroke-width="4"/>
+            <line x1="200" y1="40" x2="200" y2="260" stroke="#fff" stroke-width="2" opacity=".85"/>
+            <polygon points="10,260 390,260 386,276 14,276" fill="#122d63"/>
+            <line x1="52" y1="150" x2="348" y2="150" stroke="#e8edf7" stroke-width="3"/>
+            <rect x="46" y="132" width="308" height="18" fill="rgba(255,255,255,.18)" stroke="#e8edf7" stroke-width="2"/>
+            <line x1="46" y1="132" x2="46" y2="156" stroke="#e8edf7" stroke-width="4"/>
+            <line x1="354" y1="132" x2="354" y2="156" stroke="#e8edf7" stroke-width="4"/>
+          </svg>
+          <div class="court__shadow"></div>
+          <div class="court__ball-y"><div class="court__ball"></div></div>
+          <span class="court__paddle court__paddle--a"></span>
+          <span class="court__paddle court__paddle--b"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLUB -->
+    <section class="section" id="club">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Клуб</p>
+          <h2>Три стола на любой случай</h2>
+          <p class="section__sub">Турнирный, тренировочный и стол у бара. Ракетки и мячи выдаём бесплатно, есть раздевалка и душ.</p>
+        </header>
+        <div class="tables-grid reveal" data-render="tables"></div>
+      </div>
+    </section>
+
+    <!-- BAR -->
+    <section class="section section--alt" id="bar">
+      <div class="wrap bar">
+        <header class="section__head reveal">
+          <p class="eyebrow">Бар</p>
+          <h2>Отдохнуть между сетами</h2>
+          <p class="section__sub">Кофе, лимонады и перекусы. Заказывайте у стойки, а мы принесём к столу.</p>
+        </header>
+        <div class="menus reveal" data-render="bar"></div>
+      </div>
+    </section>
+
+    <!-- RENT -->
+    <section class="section" id="rent">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Аренда стола</p>
+          <h2>Выберите день и свободное время</h2>
+          <p class="section__sub">Нажмите на зелёные слоты: можно выбрать несколько часов и столов. Бронь подтвердим в WhatsApp.</p>
+        </header>
+
+        <div class="pricing reveal" data-render="pricing"></div>
+
+        <div class="booking reveal">
+          <div class="booking__main">
+            <div class="days" data-booking="days" role="group" aria-label="Выбор дня"></div>
+            <div class="legend">
+              <span><i class="lg lg--free"></i>Свободно</span>
+              <span><i class="lg lg--sel"></i>Выбрано</span>
+              <span><i class="lg lg--busy"></i>Занято</span>
+              <span><i class="lg lg--eve"></i>Вечерний тариф</span>
+            </div>
+            <div class="grid-scroll">
+              <div class="grid" data-booking="grid"></div>
+            </div>
+          </div>
+
+          <aside class="summary is-empty" data-booking="summary" aria-live="polite">
+            <h3>Ваша бронь</h3>
+            <ul class="summary__list" data-booking="list"></ul>
+            <div class="summary__total"><span>Итого</span><strong data-booking="total">—</strong></div>
+            <a class="btn btn--block" data-booking="submit" href="#rent" aria-disabled="true" target="_blank" rel="noopener">Забронировать в WhatsApp</a>
+            <button type="button" class="summary__clear" data-booking="clear">Очистить выбор</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBSCRIPTION -->
+    <section class="section section--alt" id="subscription">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Абонемент</p>
+          <h2>Тренируйтесь с тренером</h2>
+          <p class="section__sub">Группы по уровням от детей до продвинутых. Первое пробное занятие можно взять разовым.</p>
+        </header>
+        <div class="plans reveal" data-render="plans"></div>
+
+        <h3 class="sub-title reveal">Тренеры</h3>
+        <div class="trainers reveal" data-render="trainers"></div>
+
+        <div id="schedule" class="schedule reveal">
+          <div class="schedule__head">
+            <h3 class="sub-title">Расписание групп</h3>
+            <div class="filters" data-schedule="filters" role="group" aria-label="Фильтр по уровню"></div>
+          </div>
+          <div class="schedule__list" data-schedule="list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOURNAMENTS -->
+    <section class="section" id="tournaments">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Турниры</p>
+          <h2>Играйте за кубок</h2>
+          <p class="section__sub">Турниры для всех уровней. Регистрация в WhatsApp, количество мест ограничено сеткой.</p>
+        </header>
+        <div class="next-t reveal" data-render="next-tournament"></div>
+        <div class="t-list reveal" data-render="tournaments"></div>
+      </div>
+    </section>
+
+    <!-- CHAMPIONS -->
+    <section class="section section--alt" id="champions">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Зал славы</p>
+          <h2>Чемпионы прошлых турниров</h2>
+        </header>
+        <div class="champs reveal">
+          <div class="podium" data-render="podium"></div>
+          <div class="champs__side">
+            <h3 class="sub-title">Больше всего титулов</h3>
+            <ol class="leaders" data-render="leaders"></ol>
+          </div>
+        </div>
+        <div class="champs-table reveal">
+          <table>
+            <thead><tr><th>Турнир</th><th>Чемпион</th><th class="hide-sm">Финалист</th><th>Счёт</th></tr></thead>
+            <tbody data-render="champions"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section class="section" id="contacts">
+      <div class="wrap contacts reveal">
+        <div>
+          <p class="eyebrow">Контакты</p>
+          <h2>Приходите играть</h2>
+          <dl class="contacts__list">
+            <div><dt>Адрес</dt><dd data-text="address">Шымкент, ул. Примерная, 1</dd></div>
+            <div><dt>Часы работы</dt><dd data-text="hours">Ежедневно, 10:00–23:00</dd></div>
+            <div><dt>Телефон</dt><dd><a data-link="phone" data-text="phone" href="#">+7 (700) 000-00-00</a></dd></div>
+            <div><dt>Instagram</dt><dd><a data-link="instagram" data-text="instagram" href="#">@topspin_club</a></dd></div>
+          </dl>
+          <div class="hero__actions">
+            <a class="btn" data-link="whatsapp" href="#">Написать в WhatsApp</a>
+            <a class="btn btn--ghost" data-link="map" href="#">Открыть на карте</a>
+          </div>
+        </div>
+        <div class="contacts__card" aria-hidden="true">
+          <span class="mini-table mini-table--big"><i></i></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="logo"><span class="logo__ball" aria-hidden="true"></span><span data-text="name">TopSpin</span></span>
+      <span class="muted">© <span data-text="year">2026</span> · Бета-версия сайта</span>
+    </div>
+  </footer>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/booking.js" defer></script>
+  <script src="js/sections.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
