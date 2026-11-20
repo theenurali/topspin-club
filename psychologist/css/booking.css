@@ -1,0 +1,55 @@
+/* Запись: выбор услуги и формата, итог с кнопкой WhatsApp. */
+
+.booking { display: grid; grid-template-columns: 1fr 340px; gap: 20px; align-items: start; }
+.booking__main { display: grid; gap: 16px; }
+@media (max-width: 960px) { .booking { grid-template-columns: 1fr; } }
+
+.bk-step { margin: 0; padding: 24px; border: 0; border-radius: var(--radius); background: var(--card); min-width: 0; }
+.bk-step legend {
+  float: left; width: 100%; display: flex; align-items: center; gap: 10px;
+  padding: 0; margin-bottom: 16px; font-size: 19px; font-weight: 600; letter-spacing: -0.02em;
+}
+.bk-step legend + * { clear: both; }
+.bk-step legend b {
+  display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent); font-size: 13px;
+}
+.bk-hint { margin-top: 12px; font-size: 14px; color: var(--text-2); }
+
+/* Выбор услуги */
+.choice { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.choice label { position: relative; cursor: pointer; }
+.choice input { position: absolute; opacity: 0; pointer-events: none; }
+.choice span {
+  display: grid; gap: 2px; height: 100%; padding: 14px 16px; border-radius: 16px;
+  background: var(--bg-alt); box-shadow: inset 0 0 0 1.5px transparent; transition: box-shadow 0.2s, background 0.2s;
+}
+.choice strong { font-size: 16px; font-weight: 600; }
+.choice small { font-size: 14px; color: var(--text-2); }
+.choice input:checked + span { background: #fff; box-shadow: inset 0 0 0 2px var(--accent); }
+.choice input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 520px) { .choice { grid-template-columns: 1fr; } }
+
+/* Сегменты */
+.seg { display: inline-flex; padding: 3px; border-radius: 12px; background: var(--bg-alt); }
+.seg label { position: relative; cursor: pointer; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg span { display: block; padding: 8px 20px; border-radius: 10px; font-size: 15px; font-weight: 500; transition: background 0.2s, box-shadow 0.2s; }
+.seg input:checked + span { background: #fff; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
+.seg input:focus-visible + span { outline: 2px solid var(--accent); }
+.seg input:disabled + span { color: var(--text-3); cursor: not-allowed; }
+
+/* Итог */
+.booking__summary {
+  position: sticky; top: calc(var(--nav-h) + 16px);
+  display: grid; gap: 12px; padding: 24px; border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow);
+}
+.booking__summary h3 { font-size: 21px; }
+.summary { margin: 0 0 4px; display: grid; }
+.summary div { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #ececf0; font-size: 15px; }
+.summary dt { color: var(--text-2); }
+.summary dd { margin: 0; text-align: right; font-weight: 500; }
+.summary__total dd { font-size: 19px; font-weight: 600; }
+.pill--lg { min-height: 54px; font-size: 17px; font-weight: 600; }
+.fine { font-size: 12px; color: var(--text-3); text-align: center; }
+@media (max-width: 960px) { .booking__summary { position: static; } }
